@@ -1,0 +1,267 @@
+
+.chat-app {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+}
+.fruit-details p{
+  color: black;
+}
+.sidebar {
+  width: 536px;
+  height: 100vh; /* Ensure the sidebar spans the full height of the viewport */
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  overflow-y: auto; /* Ensure the sidebar is scrollable if content overflows */
+  position: fixed; /* Keep the sidebar fixed */
+  top: 0;
+  left: 0;
+  z-index: 1000; /* Ensure it stays on top */
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat-list {
+  list-style: none;
+  padding: 0;
+}
+.input-container {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: #444;
+  position: fixed; /* Fix it at the bottom of the viewport */
+  bottom: 0; /* Align it at the bottom */
+  left: 555px; /* Adjust according to the sidebar width */
+  width: calc(100% - 536px); /* Make it span the width minus the sidebar */
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.3); /* Optional: Add shadow for better visibility */
+  z-index: 1001; /* Ensure it's above other elements */
+}
+
+.input-container input {
+  width: 100%; /* Make the input take the full width */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px; /* Add space between the input and the button */
+}
+
+.input-container .send-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+
+.chat-item {
+  display: flex;
+  align-items: center;
+  background-color: #444;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.chat-item.selected {
+  background-color: #666;
+}
+
+.chat-avatar {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.chat-info {
+  flex-grow: 1;
+}
+
+.unread-badge {
+  background-color: red;
+  color: #fff;
+  padding: 3px 5px;
+  border-radius: 50%;
+}
+
+/* Chat Area */
+.chat-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f4f4f4;
+  margin-left: 536px; /* Leave space for the fixed sidebar */
+  margin-bottom: 60px; /* Ensure enough space for the fixed input container */
+  position: relative; /* Ensure correct positioning of child elements */
+  overflow-y: auto; /* Make the chat area scrollable */
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #444;
+  color: #fff;
+}
+
+.chat-header-avatar {
+  border-radius: 50%;
+  width: 50px;
+  margin-right: 20px;
+}
+
+.messages {
+  flex-grow: 1;
+  padding: 48px;
+  overflow-y: auto; /* Ensure messages area is scrollable */
+}
+
+/* Message Styles */
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Sent messages (align to left) */
+.message.sent {
+  align-self: flex-start; /* Align sent messages to the left */
+  background-color: #4caf50; /* Sent message background */
+  color: white;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 60%;
+  margin-right: auto; /* Adjust margin to push sent messages away from the left edge */
+}
+
+/* Received messages (align to right) */
+.message.received {
+  align-self: flex-end; /* Align received messages to the right */
+  background-color: #ddd; /* Received message background */
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 60%;
+  margin-left: auto; /* Adjust margin to push received messages away from the right edge */
+}
+
+/* Message Time */
+.message-time {
+  font-size: 12px;
+  color: gray;
+  margin-top: 5px;
+}
+
+/* Ensure chat avatars are circular */
+.chat-avatar, .chat-header-avatar {
+  width: 40px; /* Adjust size as needed */
+  height: 40px; /* Adjust size as needed */
+  border-radius: 50%;
+  object-fit: cover; /* Ensure image covers the circle properly */
+}
+
+
+/* Fruit Card Container */
+.fruit-card-container {
+  display: flex;
+  justify-content: flex-end; /* Align fruit card to the right */
+  padding: 10px;
+}
+
+/* Fruit Card */
+.fruit-card {
+  display: flex;
+  align-items: center;
+  background-color: #fff; /* White background for fruit cards */
+  padding: 40px;
+  border-radius: 50px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Add shadow for cards */
+  max-width: 90%; /* Increase the max-width to allow the card to be wider */
+  margin-bottom: 20px;
+}
+
+/* Fruit Image */
+.fruit-image {
+  width: 60px; /* Adjust image size */
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+/* Fruit Details */
+.fruit-details {
+  flex-grow: 1;
+}
+
+/* Quantity Control */
+.quantity-control {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Add spacing between buttons and text */
+}
+
+.quantity-control button {
+  background-color: #ff6347; /* Tomato red for minus button */
+  border: none;
+  padding: 5px 10px;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.quantity-control .total {
+  font-weight: bold;
+  color: #333;
+}
+
+/* Responsive Design Adjustments */
+@media (max-width: 768px) {
+  .chat-app {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: 100vh; /* Sidebar takes full width and height */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+
+  .chat-area {
+    margin-left: 0;
+    display: none; /* Hide chat area by default on small screens */
+  }
+
+  .sidebar.chat-selected {
+    display: none; /* Hide sidebar after chat is selected */
+  }
+
+  .chat-area.chat-selected {
+    display: block; /* Show chat area when a chat is selected */
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    overflow-y: auto;
+  }
+
+  .input-container {
+    left: 0;
+    width: 100%; /* Full width for input container on small screens */
+  }
+}

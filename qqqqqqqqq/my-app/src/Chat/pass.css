@@ -1,0 +1,58 @@
+.passContainer {
+  background-color: #4a4a4a;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginn-container h2 {
+  color: #fff;
+  font-size: 24px;
+}
+
+h2 {
+  color: white;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  color: #9b9b9b;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+input {
+  width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #9b9b9b;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+button {
+  background-color: #6a5acd;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:disabled {
+  background-color: #a9a9a9;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
