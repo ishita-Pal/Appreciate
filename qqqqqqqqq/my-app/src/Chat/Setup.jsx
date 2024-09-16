@@ -30,7 +30,7 @@ function Setup() {
     }
 
     try {
-      const response = await axios.post('http://localhost:8000/api/setup-account', formData, {
+      const response = await axios.post('https://appreciate-12.onrender.com/api/setup-account', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
