@@ -1,8 +1,11 @@
+import pymysql
+pymysql.install_as_MySQLdb()  # Use PyMySQL instead of MySQLdb
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
 
-# Use the correct variable name DATABASE_URL
+# Database URL
 DATABASE_URL = "mysql://avnadmin:AVNS_d4nhudYtpjbNGhWJYAQ@mysql-8e18851-ishitapal1828-ffa7.c.aivencloud.com:11246/test4"
 
 # Create engine using DATABASE_URL
