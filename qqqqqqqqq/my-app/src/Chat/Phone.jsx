@@ -15,7 +15,7 @@ const Phone = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:8000/api/check-user', { phone: phoneNumber });
+      const response = await axios.post('https://appreciate-12.onrender.com/api/check-user', { phone: phoneNumber });
 
       if (response.data.exists) {
         // Redirect to the password page with the phone number
