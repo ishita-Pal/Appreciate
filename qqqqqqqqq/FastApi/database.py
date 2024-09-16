@@ -1,17 +1,8 @@
-# Install python-dotenv if you haven't
-# pip install python-dotenv
-
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.ext.declarative import declarative_base
-from dotenv import load_dotenv
-import os
-
-load_dotenv()  # Load environment variables from a .env file
-
-URL_DATABASE = os.getenv('DATABASE_URL', 'mysql+pymysql://root:Loveislove12!@localhost:3306/test4')
-
+DATABASE_URL = "mysql://avnadmin:AVNS_d4nhudYtpjbNGhWJYAQ@mysql-8e18851-ishitapal1828-ffa7.c.aivencloud.com:11246/test4"
 engine = create_engine(URL_DATABASE)
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+SessionLocal = sessionmaker(autocommit=False , autoflush=False , bind=engine)
 
-Base = declarative_base()
+Base=declarative_base()
