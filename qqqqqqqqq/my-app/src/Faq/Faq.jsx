@@ -17,7 +17,7 @@ function Faq() {
   }, []);
 
   const fetchFaqs = () => {
-    axios.get('http://localhost:8000/faqs/')
+    axios.get('https://appreciate-12.onrender.com/faqs/')
       .then(response => setFaqs(response.data))
       .catch(error => console.error(error));
   };
@@ -61,7 +61,7 @@ function Faq() {
     }).then((result) => {
       if (result.isConfirmed) {
         if (editingFaq) {
-          axios.put(`http://localhost:8000/faqs/${editingFaq}`, newFaq)
+          axios.put(`https://appreciate-12.onrender.com/faqs/${editingFaq}`, newFaq)
             .then(() => {
               setShowPopup(false);
               fetchFaqs();
@@ -69,7 +69,7 @@ function Faq() {
             })
             .catch(error => console.error(error));
         } else {
-          axios.post('http://localhost:8000/faqs/', newFaq)
+          axios.post('https://appreciate-12.onrender.com/faqs/', newFaq)
             .then(() => {
               setShowPopup(false);
               fetchFaqs();
@@ -94,7 +94,7 @@ function Faq() {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:8000/faqs/${id}`)
+        axios.delete(`https://appreciate-12.onrender.com/faqs/${id}`)
           .then(() => {
             setFaqs(faqs.filter(faq => faq.id !== id));
             Swal.fire({
