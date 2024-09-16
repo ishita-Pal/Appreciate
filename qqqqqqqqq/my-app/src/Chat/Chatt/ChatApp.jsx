@@ -44,7 +44,7 @@ const ChatApp = () => {
 
     const fruitName = userInput.toLowerCase();
     try {
-      const response = await axios.get('http://localhost:8000/api/fruits', { params: { name: fruitName } });
+      const response = await axios.get('https://appreciate-12.onrender.com/api/fruits', { params: { name: fruitName } });
       const fruits = response.data;
       console.log(response.data);
 
