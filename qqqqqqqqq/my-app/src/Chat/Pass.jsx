@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import Swal from 'sweetalert2'; // Import SweetAlert2
+import Swal from 'sweetalert2'; 
 import './pass.css';
 import fruitsGif from './../Pic/i.gif';
 
@@ -10,7 +10,7 @@ const Pass = () => {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
   const [searchParams] = useSearchParams();
-  const phone = searchParams.get('phone'); // Get the phone number from the URL
+  const phone = searchParams.get('phone'); 
   const navigate = useNavigate();
 
   const handlePasswordSubmit = async (e) => {
@@ -20,11 +20,11 @@ const Pass = () => {
 
     try {
       const response = await axios.post('http://localhost:8000/chatlogin/', {
-        phone: phone, // Use 'phone' instead of 'username'
+        phone: phone, 
         password: password
       });
 
-      // If login is successful, show SweetAlert2 popup and navigate to /chat
+ 
       if (response.data.message === 'Login successful') {
         Swal.fire({
           title: "Login Successful!",
@@ -33,7 +33,7 @@ const Pass = () => {
           width: 550,
           padding: "3em",
           color: "#716add",
-          background: "#fff", // Set the background color to white
+          background: "#fff", 
           backdrop: `
             rgba(0,0,0,0.5) 
             url(${fruitsGif}) 
@@ -51,7 +51,7 @@ const Pass = () => {
           navigate('/chat');
         });
       } else {
-        // Handle error for incorrect login attempt
+    
         setError('Incorrect password, please try again.');
       }
     } catch (error) {
