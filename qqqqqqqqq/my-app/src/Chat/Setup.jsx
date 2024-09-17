@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom'; 
 import './setup.css';
 import axios from 'axios';
 
@@ -9,7 +9,7 @@ function Setup() {
   const [lastName, setLastName] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate(); 
 
   const handleImageChange = (e) => {
     if (e.target.files && e.target.files[0]) {
@@ -37,8 +37,6 @@ function Setup() {
       });
       console.log(response.data);
       alert('Account setup successful');
-      
-      // Navigate to chat page
       navigate('/chat');
     } catch (error) {
       console.error(error);
@@ -49,7 +47,7 @@ function Setup() {
   return (
     <div className="setup-container">
       <div className="setup-header">
-        <span className="icon">&#128247;</span> {/* Camera Icon */}
+        <span className="icon">&#128247;</span> 
         <div className="text">Let's get you setup.</div>
       </div>
       
