@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import './phone.css'; // Assuming you have the CSS in a file named Login.css
+import './phone.css'; 
 
 const Phone = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);
-  const navigate = useNavigate(); // React Router's navigation hook
+  const navigate = useNavigate();
 
   const handlePhoneNumberSubmit = async (e) => {
     e.preventDefault();
@@ -18,10 +18,10 @@ const Phone = () => {
       const response = await axios.post('https://appreciate-12.onrender.com/api/check-user', { phone: phoneNumber });
 
       if (response.data.exists) {
-        // Redirect to the password page with the phone number
+      
         navigate(`/password?phone=${phoneNumber}`);
       } else {
-        // Redirect to setup-account page if user does not exist
+      
         navigate(`/setup-account?phone=${phoneNumber}`);
       }
       
