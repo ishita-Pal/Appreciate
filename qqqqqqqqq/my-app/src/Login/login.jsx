@@ -27,13 +27,11 @@ const Login = () => {
                 showConfirmButton: false,
                 timer: 1500
             });
-
-            // Redirect to the home page after successful login
             setTimeout(() => {
-                navigate('/home');  // Use navigate to redirect
+                navigate('/home');  
             }, 1600);  
         } catch (err) {
-            console.error(err.response);  // Print the full error response
+            console.error(err.response);  
             
          
             Swal.fire({
