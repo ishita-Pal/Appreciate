@@ -10,7 +10,7 @@ function Faq() {
   const [newFaq, setNewFaq] = useState({ fruit_name: '', question: '', answer: '', image: '' });
   const [editingFaq, setEditingFaq] = useState(null);
   const [filteredFaqs, setFilteredFaqs] = useState([]);
-  const [grouped, setGrouped] = useState(false); // State to track grouping
+  const [grouped, setGrouped] = useState(false); 
 
   useEffect(() => {
     fetchFaqs();
@@ -51,7 +51,6 @@ function Faq() {
   const handleSubmit = (e) => {
     e.preventDefault();
   
-    // Show SweetAlert confirmation before saving
     Swal.fire({
       title: "Do you want to save the changes?",
       showDenyButton: true,
@@ -113,7 +112,6 @@ function Faq() {
     setGrouped(!grouped);
   };
 
-  // Function to group FAQs by fruit_name
   const groupByFruit = (faqs) => {
     return faqs.reduce((acc, faq) => {
       if (!acc[faq.fruit_name]) {
@@ -124,7 +122,7 @@ function Faq() {
     }, {});
   };
 
-  // Grouped FAQs
+
   const groupedFaqs = Object.keys(groupByFruit(filteredFaqs.length > 0 ? filteredFaqs : faqs))
     .sort()
     .map(fruit_name => ({
