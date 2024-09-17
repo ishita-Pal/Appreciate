@@ -15,7 +15,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, replace "*" with your frontend origin (e.g., "http://localhost:3000")
+    allow_origins=["*"],  
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -63,7 +63,7 @@ async def login(user: UserLogin, db: Session = Depends(get_db)):
         raise HTTPException(status_code=400, detail="Invalid username or password")
     return {"message": "Login successful"}
 
-# FAQ endpoints
+# FAQ 
 class FAQBase(BaseModel):
     fruit_name: str
     question: str
@@ -111,7 +111,7 @@ def update_faq(faq_id: int, faq: FAQBase, db: Session = Depends(get_db)):
     db.refresh(existing_faq)
     return existing_faq
 
-# Fruit endpoints
+# Chat
 def seed_fruits(db: Session):
     fruits = [
         {"name": "Apple", "description": "A sweet red fruit", "price": 1.0, "image":"https://www.truebasics.com/blog/wp-content/uploads/2023/09/apple-benefits.jpg"},
@@ -160,7 +160,7 @@ async def check_user(phone: CheckUserPhone, db: Session = Depends(get_db)):
     return {"exists": bool(user)}
 
 UPLOAD_DIRECTORY = "./uploaded_images/"
-os.makedirs(UPLOAD_DIRECTORY, exist_ok=True)  # Ensure directory exists
+os.makedirs(UPLOAD_DIRECTORY, exist_ok=True) 
 
 @app.post("/api/setup-account")
 async def setup_account(
