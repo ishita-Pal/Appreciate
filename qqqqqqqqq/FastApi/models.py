@@ -29,4 +29,4 @@ class Fruits(Base):
     name = Column(String(100), unique=True, nullable=False)
     description = Column(String(255), nullable=True)
     price = Column(Float, nullable=False)
-    image = Column(String(255), nullable=True)  # Renamed from `image_url` to `image`
+    image = Column(String(255), nullable=True)  
